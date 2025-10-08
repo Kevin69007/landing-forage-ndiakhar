@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Forage - Village de Ndiakhar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .hero-section {
+            background-color: #000;
+            padding: 60px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .projet-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: #9b9b9b;
+            margin-bottom: 0;
+        }
+
+        .forage-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 60px;
+            font-weight: 800;
+            color: #4a4a4a;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .village-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: #ff6122;
+            margin: 10px 0 25px 0;
+        }
+
+        .subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #9b9b9b;
+            margin-bottom: 25px;
+        }
+
+        .form-container {
+            background-color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 1px solid #b0baca;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px 90px;
+            font-size: 20px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            background-color: #da7f2d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #c46f25;
+        }
+
+        .campaign-section {
+            background-color: #000;
+            padding: 55px 20px;
+            text-align: center;
+        }
+
+        .campaign-image {
+            max-width: 1000px;
+            width: 100%;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .campaign-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .campaign-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 32px;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .campaign-cta {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .campaign-headline {
+            font-family: 'Poppins', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: #ff6122;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .participate-btn {
+            width: 100%;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            background-color: #da7f2d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .participate-btn:hover {
+            background-color: #c46f25;
+        }
+
+        .footer {
+            background-color: #000;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .instagram-link {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color: #f5a623;
+            text-decoration: none;
+        }
+
+        .instagram-link:hover {
+            text-decoration: underline;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #4caf50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .error-message {
+            display: none;
+            background-color: #f44336;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .projet-label {
+                font-size: 28px;
+            }
+
+            .forage-title {
+                font-size: 35px;
+            }
+
+            .village-title {
+                font-size: 30px;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .submit-btn {
+                padding: 10px 20px;
+                font-size: 18px;
+            }
+
+            .campaign-text {
+                font-size: 20px;
+            }
+
+            .campaign-headline {
+                font-size: 28px;
+            }
+
+            .hero-section {
+                padding: 30px 20px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="https://www.deux-ailes.org/" target="_blank">
+            <img src="https://d1yei2z3i6k35z.cloudfront.net/8547982/67376850d4b4c_LOGOHORIZONTAL.png" alt="Association Deux-ailes" class="logo">
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <p class="projet-label">PROJET</p>
+            <h1 class="forage-title">FORAGE</h1>
+            <h2 class="village-title">VILLAGE DE NDIAKHAR</h2>
+            <p class="subtitle">✨ Tu veux découvrir le projet ? ✨</p>
+            
+            <div class="form-container">
+                <form id="optinForm">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email" class="form-input" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="prenom" placeholder="Prénom" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nom" placeholder="Nom" class="form-input" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">RECEVOIR LA VIDEO</button>
+                    <div class="success-message" id="successMessage">
+                        Merci ! Vous allez recevoir la vidéo par email.
+                    </div>
+                    <div class="error-message" id="errorMessage">
+                        Une erreur est survenue. Veuillez réessayer.
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <img src="https://d1yei2z3i6k35z.cloudfront.net/8547982/67376b648d20e_Square-Textures.png" alt="Projet Forage Ndiakhar">
+        </div>
+    </section>
+
+    <!-- Campaign Section -->
+    <section class="campaign-section">
+        <a href="https://swiy.co/forage-eau-ndiakhar" target="_blank">
+            <img src="https://d1yei2z3i6k35z.cloudfront.net/8547982/67445772a0615_croppedimage-9149768e0d7c43adb525acf2749e5af3.png" alt="Projet de forage" class="campaign-image">
+        </a>
+        
+        <div class="campaign-content">
+            <div class="campaign-text">
+                <p>Association Deux-ailes</p>
+                <p>organise une cagnotte pour financer l'installation d'un forage</p>
+                <p>dans le village de Ndiakhar au nord du Sénégal.</p>
+            </div>
+            
+            <div class="campaign-cta">
+                <h3 class="campaign-headline">Si vous souhaitez encore nous aider<br>c'est ici !</h3>
+                <a href="https://swiy.co/forage-eau-ndiakhar" class="participate-btn" target="_blank">
+                    PARTICIPER AU PROJET DE FORAGE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="https://www.instagram.com/associationdeuxailes/" class="instagram-link" target="_blank">
+            @Association Deux Ailes
+        </a>
+    </footer>
+
+    <script>
+        document.getElementById('optinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = form.querySelector('.submit-btn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Récupération des données du formulaire
+            const formData = {
+                email: form.email.value,
+                prenom: form.prenom.value,
+                nom: form.nom.value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Désactiver le bouton pendant l'envoi
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'ENVOI EN COURS...';
+            
+            // Simulation d'envoi (à remplacer par votre backend)
+            // Pour l'instant, on stocke en localStorage et affiche un message
+            setTimeout(() => {
+                try {
+                    // Stockage basique en localStorage
+                    const submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
+                    submissions.push(formData);
+                    localStorage.setItem('formSubmissions', JSON.stringify(submissions));
+                    
+                    // Afficher le message de succès
+                    successMessage.style.display = 'block';
+                    errorMessage.style.display = 'none';
+                    
+                    // Réinitialiser le formulaire
+                    form.reset();
+                    
+                    // Log pour debug
+                    console.log('Soumission enregistrée:', formData);
+                    
+                    // Redirection optionnelle après 2 secondes
+                    // setTimeout(() => {
+                    //     window.location.href = '/merci';
+                    // }, 2000);
+                    
+                } catch (error) {
+                    console.error('Erreur:', error);
+                    successMessage.style.display = 'none';
+                    errorMessage.style.display = 'block';
+                }
+                
+                // Réactiver le bouton
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'RECEVOIR LA VIDEO';
+                
+                // Masquer le message après 5 secondes
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    errorMessage.style.display = 'none';
+                }, 5000);
+                
+            }, 1000);
+        });
+
+        // Fonction pour récupérer les soumissions (pour test)
+        function getSubmissions() {
+            return JSON.parse(localStorage.getItem('formSubmissions') || '[]');
+        }
+
+        // Console log pour voir les soumissions
+        console.log('Pour voir les soumissions: getSubmissions()');
+    </script>
+</body>
+</html>
